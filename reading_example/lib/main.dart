@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text(
                   "测试",
                   textAlign: TextAlign.center,
+                  style: TextStyle(color: RdColors.COLOR_THEME_BLUE,fontFamily: RdFonts.THEME),
                 ),
                 margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
