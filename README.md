@@ -2,13 +2,14 @@
 
 睿丁英语插件库
 
-## Getting Started
+#### 资源引入方式
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+引入资源只可以单张引入  
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```
+flutter:  
+    assets:
+        - packages/reading_widgets/assets/x.png
+        - packages/reading_widgets/assets/x1.png
+        - packages/reading_widgets/assets/x2.png
+```
