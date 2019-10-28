@@ -53,31 +53,56 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.amber,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RdButton.border(
-              onPressed: () {},
-              constraints: BoxConstraints.expand(height: 56),
-              margin: EdgeInsets.symmetric(horizontal: 56),
-              title: "登录",
-              color: Colors.transparent,
-              style: TextStyle(
-                fontSize: 24,
+        constraints: BoxConstraints.expand(),
+        child: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          child: Column(
+            children: <Widget>[
+              RdButton.border(
+                onPressed: () {},
+                constraints: BoxConstraints.expand(height: 56),
+                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
+                title: "登录",
+                color: Colors.transparent,
+                borderColor: RdColors.COLOR_THEME_BLUE,
               ),
-            ),
-            RdCard.general(
-              child: Text(
-                "测试",
-                textAlign: TextAlign.center,
+              RdCard.general(
+                child: Text(
+                  "测试",
+                  textAlign: TextAlign.center,
+                ),
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                constraints: BoxConstraints.expand(height: 56,),
+                elevationColor: Colors.black12,
+                radius: 10,
+                color: Colors.white,
               ),
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              constraints: BoxConstraints.expand(height: 56),
-              elevationColor: Colors.black12,
-              radius: 10,
-              color: Colors.white,
-            ),
-          ],
+              RdButton.orange(
+                onPressed: () {},
+                title: "测试",
+                constraints: BoxConstraints.expand(height: 56),
+                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
+                isGradient: true,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(40),
+                ),
+              ),
+              RdCard.general(
+                child: Text(
+                  "测试",
+                  textAlign: TextAlign.center,
+                ),
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
+                constraints: BoxConstraints.expand(height: 56),
+                elevationColor: Colors.black12,
+                radius: 10,
+                verticalDirection: VerticalDirection.up,
+                color: Colors.white,
+              ),
+            ],
+          ),
         ),
       ),
     );
