@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reading_widgets/reading_widgets.dart';
+import 'page/test_custom_page.dart';
+import 'page/test_question_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,91 +23,41 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
+      routes: <String, WidgetBuilder> {
+        // 这里可以定义静态路由，不能传递参数
+        '/test_custom': (_) => new TestCustomPage(),
+        '/test_question': (_) => new TestQuestionPage(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('睿丁英语布局测试'),
+        centerTitle: true,
       ),
-      body: Container(
-        color: Colors.amber,
-        constraints: BoxConstraints.expand(),
-        child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          child: Column(
-            children: <Widget>[
-              RdButton.border(
-                onPressed: () {},
-                constraints: BoxConstraints.expand(height: 56),
-                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
-                title: "登录",
-                color: Colors.transparent,
-                borderColor: RdColors.COLOR_THEME_BLUE,
-              ),
-              RdCard.general(
-                child: Text(
-                  "测试",
-                  textAlign: TextAlign.center,
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                constraints: BoxConstraints.expand(height: 56,),
-                elevationColor: Colors.black12,
-                radius: 10,
-                color: Colors.white,
-              ),
-              RdButton.orange(
-                onPressed: () {},
-                title: "测试",
-                constraints: BoxConstraints.expand(height: 56),
-                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
-                isGradient: true,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(40),
-                ),
-              ),
-              RdCard.general(
-                child: Text(
-                  "测试",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: RdColors.COLOR_THEME_BLUE,fontFamily: RdFonts.THEME),
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
-                constraints: BoxConstraints.expand(height: 56),
-                elevationColor: Colors.black12,
-                radius: 10,
-                verticalDirection: VerticalDirection.up,
-                color: Colors.white,
-              ),
-            ],
+      body: Column(
+        children: <Widget>[
+          ListTile(
+            title: Text('自定义样式',textAlign: TextAlign.center,),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_custom');
+            },
           ),
-        ),
+          ListTile(
+            title: Text('问答题测试',textAlign: TextAlign.center,),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_question');
+            },
+          )
+        ],
       ),
     );
   }
 }
+

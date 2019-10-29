@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'reading_color.dart';
+import 'package:reading_widgets/src/config/reading_color.dart';
 
 /// 睿丁英语-按钮样式
 class RdButton {

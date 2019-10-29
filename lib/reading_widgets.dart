@@ -1,6 +1,8 @@
 library reading_widgets;
 
-export 'src/reading_button.dart';
-export 'src/reading_card.dart';
-export 'src/reading_color.dart';
-export 'src/reading_font.dart';
+export 'src/custom/reading_button.dart';
+export 'src/custom/reading_card.dart';
+export 'src/config/reading_color.dart';
+export 'src/config/reading_font.dart';
+export 'src/config/reading_image.dart';
+export 'src/question/reading_question.dart';
