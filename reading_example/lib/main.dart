@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 import 'page/test_custom_page.dart';
 import 'page/test_question_page.dart';
+import 'page/test_drag_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,10 +25,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
-      routes: <String, WidgetBuilder> {
+      routes: <String, WidgetBuilder>{
         // 这里可以定义静态路由，不能传递参数
         '/test_custom': (_) => new TestCustomPage(),
         '/test_question': (_) => new TestQuestionPage(),
+        '/test_drag': (_) => new TestDragPage(),
       },
     );
   }
@@ -44,15 +46,30 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           ListTile(
-            title: Text('自定义样式',textAlign: TextAlign.center,),
+            title: Text(
+              '自定义样式',
+              textAlign: TextAlign.center,
+            ),
             onTap: () {
               Navigator.of(context).pushNamed('/test_custom');
             },
           ),
           ListTile(
-            title: Text('问答题测试',textAlign: TextAlign.center,),
+            title: Text(
+              '问答题测试',
+              textAlign: TextAlign.center,
+            ),
             onTap: () {
               Navigator.of(context).pushNamed('/test_question');
+            },
+          ),
+          ListTile(
+            title: Text(
+              '拖拽测试',
+              textAlign: TextAlign.center,
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_drag');
             },
           )
         ],
@@ -60,4 +77,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-

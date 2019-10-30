@@ -4,6 +4,7 @@ import 'package:jvtd_list/jvtd_list.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 import 'base_question.dart';
 
+/// 单选题  多选题   判断题
 class ChoiceQuestion<Q extends BaseQuestionBean> extends StatefulWidget {
   final int index; //题号
   final Q question; //问题
@@ -52,7 +53,7 @@ class _ChoiceQuestionState<Q extends BaseQuestionBean> extends BaseQuestionState
   QuestionType get type => widget.type;
 
   @override
-  Widget buildQuestionType(BuildContext context) {
+  Widget buildQuestion(BuildContext context) {
     return StaggeredGridView.countBuilder(
       physics: NeverScrollableScrollPhysics(),
       crossAxisCount: rowNum,
@@ -115,12 +116,9 @@ class _ChoiceQuestionState<Q extends BaseQuestionBean> extends BaseQuestionState
   }
 
   Color _answerColor(BaseAnswerBean value, {bool text = false}) {
-    print(value.toString());
     bool select = _selectOption(value);
-    print("是否选择：" + select.toString());
     if (question().status() == QuestionStatus.preview) {
       bool right = _rightOption(value);
-      print("是否正确：" + right.toString());
       if (right) {
         return Colors.green;
       } else if (select && !right) {
@@ -163,7 +161,6 @@ class _ChoiceQuestionState<Q extends BaseQuestionBean> extends BaseQuestionState
         });
       }
     }
-    print(question().toString());
 //    if (widget.callback != null) {
 //      widget.callback(index, _selectOptions);
 //    }

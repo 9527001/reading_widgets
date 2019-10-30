@@ -44,7 +44,7 @@ abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulW
       children: <Widget>[
         _buildTopic(),
         SizedBox(height: spacing()),
-        buildQuestionType(context),
+        buildQuestion(context),
         _buildAnalysis(),
       ],
     );
@@ -74,7 +74,7 @@ abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulW
 
   //答案间距
   double spacing(){
-    return question().status() == QuestionStatus.normal ? 64 : 24;
+    return question().status() == QuestionStatus.normal ? 48 : 24;
   }
 
   String _questionType() {
@@ -90,7 +90,7 @@ abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulW
 
   //根据题型创建相关页面
   @protected
-  Widget buildQuestionType(BuildContext context);
+  Widget buildQuestion(BuildContext context);
 
   /// 创建解析
   Widget _buildAnalysis() {

@@ -22,7 +22,7 @@ class _TestQuestionPageState extends State<TestQuestionPage> {
                   child: RdQuestion.build(question: TestQuestionUtils.testQuestion()[index], index: index),
                   padding: EdgeInsets.all(16),
                 ),
-                margin: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 border: Border.all(color: Colors.white60, width: 5),
               );
             },
@@ -41,8 +41,7 @@ class TestQuestionUtils {
         RdAnswerBean(id: "3", info: "答案3"),
       ], rAnswers: [
         RdAnswerBean(id: "1", info: "答案1"),
-      ], sAnswers: [
-      ]),
+      ], sAnswers: []),
       RdQuestionBean(id: "1", qType: 0, qStatus: 1, title: "选择题测试2", tips: "测试批注", qOptions: [
         RdAnswerBean(id: "1", info: "答案-------------1"),
         RdAnswerBean(id: "2", info: "答案-------------2"),
@@ -57,7 +56,72 @@ class TestQuestionUtils {
         RdAnswerBean(id: "2", info: "答案2"),
       ], rAnswers: [
         RdAnswerBean(id: "1", info: "答案1"),
+      ], sAnswers: []),
+      RdQuestionBean(id: "1", qType: 3, qStatus: 0, title: "排序题", tips: "测试批注", qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
+      ], sAnswers: []),
+      RdQuestionBean(id: "1", qType: 3, qStatus: 2, title: "排序题", tips: "测试批注", qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
+      ], sAnswers: []),
+      RdQuestionBean(id: "1", qType: 3, qStatus: 1, title: "排序题", tips: "测试批注", qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
       ], sAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "7", info: "a"),
       ]),
     ];
   }
@@ -146,8 +210,10 @@ class RdQuestionBean extends BaseQuestionBean<RdAnswerBean> {
       return QuestionType.choice;
     } else if (qType == 1) {
       return QuestionType.multiple_choice;
-    } else if(qType == 2){
+    } else if (qType == 2) {
       return QuestionType.judge;
+    } else if (qType == 3) {
+      return QuestionType.sort;
     }
     return null;
   }
