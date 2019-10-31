@@ -1,6 +1,7 @@
 export 'base_question.dart';
 export 'choice_question.dart';
 export 'sort_question.dart';
+export 'connection_question.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:reading_widgets/reading_widgets.dart';
@@ -18,6 +19,11 @@ class RdQuestion {
       );
     }else if(question.type() == QuestionType.sort){
       return SortQuestion<Q>(
+        index: index,
+        question: question,
+      );
+    }else if(question.type() == QuestionType.connection){
+      return ConnectionQuestion<Q>(
         index: index,
         question: question,
       );

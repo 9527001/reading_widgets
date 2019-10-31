@@ -10,12 +10,14 @@ class RdCard {
   /// [margin]边距
   /// [elevation]阴影高度
   /// [elevationColor]阴影颜色
+  /// [verticalDirection]阴影位置
   /// [color]背景颜色
   /// [gradient]渐变背景色
   /// [radius]圆角
   /// [borderRadius]圆角 与radius只存在一个
   /// [isShadow]是否显示弥散阴影
-  /// [verticalDirection]阴影位置
+  /// [shadowColor] 弥散阴影颜色
+  /// [offset]弥散阴影偏移
   /// [border]边框
   static Widget general({
     @required Widget child,
@@ -29,6 +31,8 @@ class RdCard {
     double radius = 20,
     BorderRadius borderRadius,
     bool isShadow = false,
+    Color shadowColor = Colors.black12,
+    Offset offset,
     VerticalDirection verticalDirection = VerticalDirection.down,
     BoxBorder border,
   }) {
@@ -41,7 +45,7 @@ class RdCard {
         decoration: BoxDecoration(
           color: elevationColor,
           borderRadius: borderRadius ?? BorderRadius.circular(radius),
-          boxShadow: isShadow ? [BoxShadow(blurRadius: elevation, offset: Offset(elevation, elevation), color: Colors.black12)] : [],
+          boxShadow: isShadow ? [BoxShadow(blurRadius: elevation, offset: offset ?? Offset(elevation, elevation), color: shadowColor)] : [],
         ),
         child: Container(
           constraints: constraints,

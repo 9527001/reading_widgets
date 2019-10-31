@@ -4,7 +4,7 @@ import 'package:reading_widgets/src/config/reading_color.dart';
 enum QuestionType {
   choice, //单选题
   multiple_choice, //多选题
-  judge,//判断题
+  judge, //判断题
   fill_blank, //填空题
   connection, //连线
   sort, //排序题
@@ -16,19 +16,29 @@ enum QuestionStatus {
   review, //批阅,有解析状态
 }
 
-abstract class BaseQuestionBean<A extends BaseAnswerBean> {
+abstract class BaseQuestionBean<A extends BaseAnswerBean, T extends BaseTitleBean> {
   QuestionType type(); //类型
   QuestionStatus status(); //状态
   String topic(); //题目
+  List<T> titles(); //标题集，用于连线题
   List<A> options(); //答案
   List<A> rightAnswers(); //正确答案集
   List<A> answers(); //选择答案集
   String analysis(); //解析
 }
 
-abstract class BaseAnswerBean {
-  String aid();//唯一标识
-  String answer();//答案
+class BaseAnswerBean {
+  String aid(){
+    return null;
+  } //唯一标识
+  String answer(){
+    return null;
+  } //答案
+}
+
+abstract class BaseTitleBean {
+  String aid(); //唯一标识
+  String title(); //标题
 }
 
 abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulWidget> extends State<T> {
@@ -53,27 +63,27 @@ abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulW
   /// 创建题目
   Widget _buildTopic() {
     return Row(
-        children: <Widget>[
-          Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(right: 10),
-            constraints: BoxConstraints.expand(width: 36,height: 36),
-            decoration: BoxDecoration(color: Colors.orange,border: Border.all(color: Colors.amberAccent,width: 3),borderRadius: BorderRadius.circular(18)),
-            child: Text(
-              index(),
-              style: TextStyle(color: RdColors.COLOR_FFF, fontSize: 18),
-            ),
+      children: <Widget>[
+        Container(
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(right: 10),
+          constraints: BoxConstraints.expand(width: 36, height: 36),
+          decoration: BoxDecoration(color: Colors.orange, border: Border.all(color: Colors.amberAccent, width: 3), borderRadius: BorderRadius.circular(18)),
+          child: Text(
+            index(),
+            style: TextStyle(color: RdColors.COLOR_FFF, fontSize: 18),
           ),
-          Text(
-            question().topic() + _questionType(),
-            style: TextStyle(color: RdColors.COLOR_000, fontSize: 18),
-          ),
-        ],
-      );
+        ),
+        Text(
+          question().topic() + _questionType(),
+          style: TextStyle(color: RdColors.COLOR_000, fontSize: 18),
+        ),
+      ],
+    );
   }
 
   //答案间距
-  double spacing(){
+  double spacing() {
     return question().status() == QuestionStatus.normal ? 48 : 24;
   }
 
@@ -100,13 +110,19 @@ abstract class BaseQuestionState<Q extends BaseQuestionBean, T extends StatefulW
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: RdColors.COLOR_THEME_BLUE,borderRadius: BorderRadius.circular(8)),
-            padding: EdgeInsets.symmetric(vertical: 4,horizontal: 14),
+            decoration: BoxDecoration(color: RdColors.COLOR_THEME_BLUE, borderRadius: BorderRadius.circular(8)),
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 14),
             margin: EdgeInsets.only(bottom: 10),
-            child: Text("解析",style: TextStyle(color: RdColors.COLOR_FFF,fontSize: 14),),
+            child: Text(
+              "解析",
+              style: TextStyle(color: RdColors.COLOR_FFF, fontSize: 14),
+            ),
           ),
           Container(
-            child: Text(question().analysis(),style: TextStyle(color: RdColors.COLOR_666,fontSize: 16),),
+            child: Text(
+              question().analysis(),
+              style: TextStyle(color: RdColors.COLOR_666, fontSize: 16),
+            ),
           ),
         ],
       ),

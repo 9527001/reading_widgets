@@ -123,6 +123,99 @@ class TestQuestionUtils {
         RdAnswerBean(id: "2", info: "tow"),
         RdAnswerBean(id: "7", info: "a"),
       ]),
+      RdQuestionBean(id: "1", qType: 4, qStatus: 0, title: "连线题", tips: "测试批注", qTitles: [
+        RdTitleBean(id: "1", info: "1124"),
+        RdTitleBean(id: "2", info: "12"),
+        RdTitleBean(id: "3", info: "13"),
+        RdTitleBean(id: "4", info: "1123"),
+        RdTitleBean(id: "5", info: "11"),
+        RdTitleBean(id: "6", info: "1124124"),
+        RdTitleBean(id: "7", info: "1124"),
+        RdTitleBean(id: "8", info: "11"),
+      ], qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
+      ], sAnswers: []),
+      RdQuestionBean(id: "1", qType: 4, qStatus: 1, title: "连线题", tips: "测试批注", qTitles: [
+        RdTitleBean(id: "1", info: "1124"),
+        RdTitleBean(id: "2", info: "12"),
+        RdTitleBean(id: "3", info: "13"),
+        RdTitleBean(id: "4", info: "1123"),
+        RdTitleBean(id: "5", info: "11"),
+        RdTitleBean(id: "6", info: "1124124"),
+        RdTitleBean(id: "7", info: "1124"),
+        RdTitleBean(id: "8", info: "11"),
+      ], qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
+      ], sAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "7", info: "a"),
+      ]),
+      RdQuestionBean(id: "1", qType: 4, qStatus: 2, title: "连线题", tips: "测试批注", qTitles: [
+        RdTitleBean(id: "1", info: "1124"),
+        RdTitleBean(id: "2", info: "12"),
+        RdTitleBean(id: "3", info: "13"),
+        RdTitleBean(id: "4", info: "1123"),
+        RdTitleBean(id: "5", info: "11"),
+        RdTitleBean(id: "6", info: "1124124"),
+        RdTitleBean(id: "7", info: "1124"),
+        RdTitleBean(id: "8", info: "11"),
+      ], qOptions: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "2", info: "tow"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+      ], rAnswers: [
+        RdAnswerBean(id: "1", info: "one"),
+        RdAnswerBean(id: "8", info: "asdklfjl"),
+        RdAnswerBean(id: "3", info: "three"),
+        RdAnswerBean(id: "5", info: "klsadjf"),
+        RdAnswerBean(id: "6", info: "ewar"),
+        RdAnswerBean(id: "4", info: "askdjfhjkdsafh"),
+        RdAnswerBean(id: "7", info: "a"),
+        RdAnswerBean(id: "2", info: "tow"),
+      ], sAnswers: []),
     ];
   }
 }
@@ -149,7 +242,25 @@ class RdAnswerBean extends BaseAnswerBean {
   }
 }
 
-class RdQuestionBean extends BaseQuestionBean<RdAnswerBean> {
+class RdTitleBean extends BaseTitleBean {
+  String id;
+  String info;
+
+  RdTitleBean({this.id, this.info});
+
+  @override
+  String aid() {
+    return id ?? "";
+  }
+
+  @override
+  String title() {
+    // TODO: implement title
+    return info ?? "";
+  }
+}
+
+class RdQuestionBean extends BaseQuestionBean<RdAnswerBean, RdTitleBean> {
   String id;
   String title;
   String tips;
@@ -158,8 +269,9 @@ class RdQuestionBean extends BaseQuestionBean<RdAnswerBean> {
   List<RdAnswerBean> qOptions;
   List<RdAnswerBean> rAnswers;
   List<RdAnswerBean> sAnswers;
+  List<RdTitleBean> qTitles;
 
-  RdQuestionBean({this.id, this.title, this.tips, this.qType, this.qStatus, this.qOptions, this.rAnswers, this.sAnswers});
+  RdQuestionBean({this.id, this.title, this.tips, this.qType, this.qStatus, this.qOptions, this.rAnswers, this.sAnswers, this.qTitles});
 
   @override
   String toString() {
@@ -214,7 +326,14 @@ class RdQuestionBean extends BaseQuestionBean<RdAnswerBean> {
       return QuestionType.judge;
     } else if (qType == 3) {
       return QuestionType.sort;
+    } else if(qType == 4){
+      return QuestionType.connection;
     }
     return null;
+  }
+
+  @override
+  List<RdTitleBean> titles() {
+    return qTitles;
   }
 }
