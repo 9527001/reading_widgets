@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reading_widgets/reading_widgets.dart';
+import 'package:jvtd_uikit/jvtd_uikit.dart';
 
 class TestCustomPage extends StatefulWidget {
   TestCustomPage({Key key}) : super(key: key);
@@ -33,7 +34,7 @@ class _TestCustomPageState extends State<TestCustomPage> {
               RdButton.border(
                 onPressed: () {},
                 constraints: BoxConstraints.expand(height: 56),
-                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
+                margin: EdgeInsets.symmetric(horizontal: 56, vertical: 16),
                 title: "边框按钮",
                 color: Colors.transparent,
                 borderColor: RdColors.COLOR_THEME_BLUE,
@@ -44,17 +45,23 @@ class _TestCustomPageState extends State<TestCustomPage> {
                   textAlign: TextAlign.center,
                 ),
                 margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                constraints: BoxConstraints.expand(height: 56,),
+                constraints: BoxConstraints.expand(
+                  height: 56,
+                ),
                 elevationColor: Colors.black12,
                 radius: 10,
                 color: Colors.white,
               ),
-              RdButton.orange(
+              RdButton.general(
                 onPressed: () {},
+                isSubscript: true,
+                isShadow: true,
+                shadowColor: RdColors.COLOR_THEME_BLUE,
+                elevationColor: RdColors.COLOR_THEME_ORANGE,
                 title: "渐变色按钮",
                 constraints: BoxConstraints.expand(height: 56),
-                margin: EdgeInsets.symmetric(horizontal: 56,vertical: 16),
-                isGradient: true,
+                margin: EdgeInsets.symmetric(horizontal: 56, vertical: 16),
+                gradient: RdColors.GRADIENT_THEME_ORANGE_BACKGROUND,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomRight: Radius.circular(40),
@@ -64,7 +71,7 @@ class _TestCustomPageState extends State<TestCustomPage> {
                 child: Text(
                   "阴影卡片布局，上阴影",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: RdColors.COLOR_THEME_BLUE,fontFamily: RdFonts.THEME),
+                  style: TextStyle(color: RdColors.COLOR_THEME_BLUE, fontFamily: RdFonts.THEME),
                 ),
                 margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
@@ -74,10 +81,15 @@ class _TestCustomPageState extends State<TestCustomPage> {
                 verticalDirection: VerticalDirection.up,
                 color: Colors.white,
               ),
+              RdCheckGroup(datas: ["123","12312312","123123121"], onSelected: (values){
+//                print(values);
+              }),
             ],
           ),
         ),
       ),
     );
   }
+
+  bool select = false;
 }

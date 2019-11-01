@@ -182,11 +182,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "0.0.8"
-      resolved-ref: "374c51cb258f5977946144ff70928ceb3e1d3c01"
+      ref: "0.1.0+1"
+      resolved-ref: "14ff79492c584bb629911af7afbda8cef4a06a24"
       url: "https://github.com/JvtdFlutter/uikit.git"
     source: git
-    version: "0.0.8"
+    version: "0.1.0"
   keyboard_actions:
     dependency: transitive
     description:

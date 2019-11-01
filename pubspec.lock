@@ -175,11 +175,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "0.0.9"
-      resolved-ref: cd2fe78bbf80628852e3fb68ff61b2b7dc1be8f8
+      ref: "0.1.0"
+      resolved-ref: "30c3a410fd3b4d0fc6109a5dd85289a52fe38948"
       url: "https://github.com/JvtdFlutter/uikit.git"
     source: git
-    version: "0.0.9"
+    version: "0.1.0"
   keyboard_actions:
     dependency: transitive
     description:

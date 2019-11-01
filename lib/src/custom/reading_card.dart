@@ -33,6 +33,7 @@ class RdCard {
     bool isShadow = false,
     Color shadowColor = Colors.black12,
     Offset offset,
+    double blurRadius,
     VerticalDirection verticalDirection = VerticalDirection.down,
     BoxBorder border,
   }) {
@@ -45,7 +46,7 @@ class RdCard {
         decoration: BoxDecoration(
           color: elevationColor,
           borderRadius: borderRadius ?? BorderRadius.circular(radius),
-          boxShadow: isShadow ? [BoxShadow(blurRadius: elevation, offset: offset ?? Offset(elevation, elevation), color: shadowColor)] : [],
+          boxShadow: isShadow ? [BoxShadow(blurRadius: blurRadius ?? elevation, offset: offset ?? Offset(elevation, elevation), color: shadowColor)] : [],
         ),
         child: Container(
           constraints: constraints,
@@ -59,7 +60,7 @@ class RdCard {
             constraints: constraints,
             child: child,
             decoration: BoxDecoration(
-              color: gradient == null ? color : null,
+              color: gradient != null ? null : color,
               borderRadius: borderRadius != null ? borderRadius.subtract(BorderRadius.circular(border != null ? elevation : 0)) : BorderRadius.circular(radius - (border != null ? elevation : 0)),
               gradient: gradient,
             ),

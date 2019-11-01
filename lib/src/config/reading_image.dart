@@ -5,4 +5,7 @@ class RdImages{
 
   static const String RADIO_SELECT = "assets/icon_radio_select.png";
   static const String RADIO_UNSELECT = "assets/icon_radio_unselect.png";
+
+  static const String BTN_SUBSCRIPT = "assets/icon_radio_unselect.png";
+
 }
