@@ -56,4 +56,14 @@ class RdColors{
   static const Color COLOR_TRANSPARENT = Color(0x01000000);
   static const Color COLOR_404040 = Color(0xff404040);
   static const Color COLOR_B6B6B6 = Color(0xffb6b6b6);
+
+  static const Color COLOR_2470AF = Color(0xff2470AF);
+  static const Color COLOR_3CA7FB = Color(0xff3CA7FB);
+  static const Color COLOR_92D1FC = Color(0xff92D1FC);
+  static const Color COLOR_E4F4FE = Color(0xffE4F4FE);
+  static const Color COLOR_FFA80A = Color(0xffFFA80A);
+  static const Color COLOR_FCE6B4 = Color(0xffFCE6B4);
+
+
+
 }

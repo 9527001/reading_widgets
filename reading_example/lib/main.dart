@@ -3,6 +3,7 @@ import 'package:reading_widgets/reading_widgets.dart';
 import 'page/test_custom_page.dart';
 import 'page/test_question_page.dart';
 import 'page/test_drag_page.dart';
+import 'page/test_popup_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/test_custom': (_) => new TestCustomPage(),
         '/test_question': (_) => new TestQuestionPage(),
         '/test_drag': (_) => new TestDragPage(),
+        '/test_popup': (_) => new TestPopupPage(),
       },
     );
   }
@@ -70,6 +72,15 @@ class MyHomePage extends StatelessWidget {
             ),
             onTap: () {
               Navigator.of(context).pushNamed('/test_drag');
+            },
+          ),
+          ListTile(
+            title: Text(
+              '弹窗布局测试',
+              textAlign: TextAlign.center,
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_popup');
             },
           )
         ],
