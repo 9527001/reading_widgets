@@ -25,24 +25,42 @@ class _TestPopupPageState extends State<TestPopupPage> {
       ),
       body:  Container(
         alignment: Alignment.center,
-        child: FlatButton(onPressed: (){
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return _pop();
-              });
-        }, child: Container(
-          alignment:Alignment.center,child: Text('点击事件'),color: Colors.amber,
-          constraints: BoxConstraints.expand(width: 100,height: 100),)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            FlatButton(onPressed: (){
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return _pop();
+                  });
+            }, child: Container(
+              alignment:Alignment.center,child: Text('层级嵌套弹窗'),color: Colors.amber,
+              constraints: BoxConstraints.expand(width: 100,height: 100),)),
+            SizedBox(height: 20,),
+            FlatButton(onPressed: (){
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return _pointPo();
+                  });
+            }, child: Container(
+              alignment:Alignment.center,child: Text('提示布局弹窗'),color: Colors.amber,
+              constraints: BoxConstraints.expand(width: 100,height: 100),)),
+          ],
+        ),
       )
     );
   }
 
+  Widget _pointPo(){
+    return RdPopUp.pointPopup(pointImage: RdImages.RADIO_SELECT,pointTitle: '账号不存在！',bgTwoColors: RdColors.COLOR_92D1FC,bgOneColors: RdColors.COLOR_2470AF,pointImageWidth: 60,pointImageHeight: 60);
+  }
   Widget _pop(){
     return Container(
         child:  RdPopUp.popup(
             isShow: true,
-            type: 0,
+            type: 1,
             title: "选择分类",
             buttonText: "确定",
             container: Container(

@@ -5,6 +5,10 @@ import '../../reading_widgets.dart';
 
 ///睿丁英语弹窗样式
 class RdPopUp {
+  ///层级嵌套弹窗样式
+  ///
+  ///
+  ///
   ///[edgeInsets]弹窗内容间距
   ///[bgOneColors]第一层背景颜色
   ///[bgTwoColors]第二层背景颜色
@@ -143,6 +147,65 @@ class RdPopUp {
                     )
                   : Container()),
         ],
+      ),
+    );
+  }
+
+  ///层级嵌套弹窗样式
+  ///
+  ///
+  ///
+  ///[pointImage]提示弹窗图片
+  ///[pointImageWidth]提示图片的宽
+  ///[pointImageHeight]提示图片的高
+  ///[pointTitle]提示标题
+  ///[bgOneColors]第一层背景颜色
+  ///[bgTwoColors]第二层背景颜色
+  static Widget pointPopup({
+    @required String pointImage,
+    double pointImageWidth,
+    double pointImageHeight,
+    @required String pointTitle,
+    Color bgOneColors = RdColors.COLOR_92D1FC,
+    Color bgTwoColors = RdColors.COLOR_FFF,
+  }) {
+    return AlertDialog(
+      contentPadding: EdgeInsets.zero,
+
+      ///设置背景颜色为弹窗蒙层颜色一致
+      backgroundColor: Colors.transparent,
+      content: Container(
+        margin: EdgeInsets.symmetric(horizontal: 35),
+        decoration: BoxDecoration(
+          color: bgOneColors,
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+        ),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 30, horizontal: 50),
+          decoration: BoxDecoration(
+            color: bgTwoColors,
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+          ),
+          margin: EdgeInsets.only(bottom: 5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Image.asset(
+                pointImage,
+                package: RdImages.PACKAGE,
+                width: pointImageWidth,
+                height: pointImageHeight,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                pointTitle,
+                style: TextStyle(color: RdColors.COLOR_666),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -20,7 +20,7 @@ class RdButton {
   /// [isInk]是否有点击效果
   static Widget border({
     @required VoidCallback onPressed,
-    BoxConstraints constraints = const BoxConstraints.expand(height: 56),
+    BoxConstraints constraints = const BoxConstraints.expand(height: 50),
     EdgeInsets margin = EdgeInsets.zero,
     @required String title,
     double radius = 100,
