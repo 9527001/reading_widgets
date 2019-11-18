@@ -47,6 +47,13 @@ flutter:
   assets:
     - packages/reading_widgets/assets/icon_radio_select.png
     - packages/reading_widgets/assets/icon_radio_unselect.png
+    - packages/reading_widgets/assets/icon_login_register_bg.png
+    - packages/reading_widgets/assets/icon_reading.png
+    - packages/reading_widgets/assets/icon_login.png
+    - packages/reading_widgets/assets/icon_login_home.png
+    - packages/reading_widgets/assets/icon_nav_return.png
+    - packages/reading_widgets/assets/icon_login_home.png
+
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
