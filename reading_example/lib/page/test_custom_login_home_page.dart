@@ -7,10 +7,9 @@ class CustomLoginHomePage extends StatefulWidget {
       _CustomLoginTopBackgroundPageState();
 }
 
-class _CustomLoginTopBackgroundPageState
-    extends State<CustomLoginHomePage> {
+class _CustomLoginTopBackgroundPageState extends State<CustomLoginHomePage> {
   @override
   Widget build(BuildContext context) {
-    return LoginTopBackground.login();
+    return RdLoginTopBackground.general(isLogo: true, isNote: true);
   }
 }

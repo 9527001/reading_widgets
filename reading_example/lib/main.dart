@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:reading_example/page/test_custom_login_find_password_page.dart';
 import 'package:reading_example/page/test_custom_login_home_page.dart';
 import 'package:reading_example/page/test_custom_login_register_page.dart';
-import 'package:reading_example/page/test_custom_login_top_background.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 import 'page/test_custom_page.dart';
 import 'page/test_question_page.dart';
