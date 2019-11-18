@@ -54,7 +54,7 @@ class _TestPopupPageState extends State<TestPopupPage> {
   }
 
   Widget _pointPo(){
-    return RdPopUp.pointPopup(pointImage: RdImages.RADIO_SELECT,pointTitle: '账号不存在！',bgTwoColors: RdColors.COLOR_92D1FC,bgOneColors: RdColors.COLOR_2470AF,pointImageWidth: 60,pointImageHeight: 60);
+    return RdPopUp.pointPopup(pointImage: RdImages.RADIO_SELECT,pointTitle: '账号不存在！',bgTwoColors: RdColors.COLOR_B3DEFF,bgOneColors: RdColors.COLOR_199CFF,pointImageWidth: 60,pointImageHeight: 60);
   }
   Widget _pop(){
     return Container(

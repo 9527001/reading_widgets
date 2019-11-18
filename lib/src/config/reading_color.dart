@@ -57,12 +57,23 @@ class RdColors{
   static const Color COLOR_404040 = Color(0xff404040);
   static const Color COLOR_B6B6B6 = Color(0xffb6b6b6);
 
-  static const Color COLOR_2470AF = Color(0xff2470AF);
-  static const Color COLOR_3CA7FB = Color(0xff3CA7FB);
-  static const Color COLOR_92D1FC = Color(0xff92D1FC);
+//  static const Color COLOR_2470AF = Color(0xff2470AF);
+//  static const Color COLOR_3CA7FB = Color(0xff3CA7FB);
+//  static const Color COLOR_92D1FC = Color(0xff92D1FC);
+//  static const Color COLOR_FFA80A = Color(0xffFFA80A);
   static const Color COLOR_E4F4FE = Color(0xffE4F4FE);
-  static const Color COLOR_FFA80A = Color(0xffFFA80A);
+  static const Color COLOR_199CFF = Color(0xff199CFF);
+  static const Color COLOR_4DB2FF = Color(0xff4DB2FF);
+  static const Color COLOR_B3DEFF = Color(0xffB3DEFF);
+  static const Color COLOR_FFA707 = Color(0xffFFA707);
   static const Color COLOR_FCE6B4 = Color(0xffFCE6B4);
+  static const Color COLOR_636679 = Color(0xff636679);
+  static const Color COLOR_CCE9FF = Color(0xffCCE9FF);
+  static const Color COLOR_FF6224 = Color(0xffFF6224);
+  static const Color COLOR_32A7FF = Color(0xff32A7FF);
+  static const Color COLOR_DDDDDD = Color(0xffDDDDDD);
+  static const Color COLOR_898A95 = Color(0xff898A95);
+
 
 
 

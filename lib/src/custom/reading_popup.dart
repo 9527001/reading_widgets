@@ -22,9 +22,9 @@ class RdPopUp {
   ///[type]显示不同眼睛 0代表全部 1代表只看正确 2代表只看错误
   static Widget popup({
     EdgeInsets edgeInsets = const EdgeInsets.all(0),
-    Color bgOneColors = RdColors.COLOR_2470AF,
-    Color bgTwoColors = RdColors.COLOR_3CA7FB,
-    Color bgThreeColors = RdColors.COLOR_92D1FC,
+    Color bgOneColors = RdColors.COLOR_199CFF,
+    Color bgTwoColors = RdColors.COLOR_4DB2FF,
+    Color bgThreeColors = RdColors.COLOR_B3DEFF,
     Color bgFourColors = RdColors.COLOR_E4F4FE,
     @required String title,
     double titleTop = 15.0,
@@ -166,7 +166,7 @@ class RdPopUp {
     double pointImageWidth,
     double pointImageHeight,
     @required String pointTitle,
-    Color bgOneColors = RdColors.COLOR_92D1FC,
+    Color bgOneColors = RdColors.COLOR_FFA707,
     Color bgTwoColors = RdColors.COLOR_FFF,
   }) {
     return AlertDialog(
