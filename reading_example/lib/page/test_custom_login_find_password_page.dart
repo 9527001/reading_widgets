@@ -11,8 +11,15 @@ class _CustomLoginTopBackgroundPageState
     extends State<CustomLoginFindPasswordPage> {
   @override
   Widget build(BuildContext context) {
-    return LoginTopBackground.findPassword(
-        title: '忘记密码，啥都行',
+//    return LoginTopBackground.findPassword(
+//        title: '忘记密码，啥都行',
+//        onPressed: () {
+//          Navigator.pop(context);
+//        });
+    return LoginTopBackground.general(
+        isLogo: false,
+        isNav: true,
+        isNote: false,
         onPressed: () {
           Navigator.pop(context);
         });

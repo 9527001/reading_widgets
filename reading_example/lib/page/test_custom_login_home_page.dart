@@ -11,6 +11,6 @@ class _CustomLoginTopBackgroundPageState
     extends State<CustomLoginHomePage> {
   @override
   Widget build(BuildContext context) {
-    return LoginTopBackground.login();
+    return LoginTopBackground.general(isLogo: true,isNav: false,isNote: true);
   }
 }
