@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:reading_example/page/test_custom_login_find_password_page.dart';
+import 'package:reading_example/page/test_custom_login_home_page.dart';
+import 'package:reading_example/page/test_custom_login_register_page.dart';
+import 'package:reading_example/page/test_custom_login_top_background.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 import 'page/test_custom_page.dart';
 import 'page/test_question_page.dart';
@@ -32,6 +36,9 @@ class MyApp extends StatelessWidget {
         '/test_question': (_) => new TestQuestionPage(),
         '/test_drag': (_) => new TestDragPage(),
         '/test_popup': (_) => new TestPopupPage(),
+        '/test_custom_login_home': (_) => new CustomLoginHomePage(),
+        '/test_custom_login_register': (_) => new CustomLoginRegisterPage(),
+        '/test_custom_login_find_password': (_) => new CustomLoginFindPasswordPage(),
       },
     );
   }
@@ -82,7 +89,34 @@ class MyHomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushNamed('/test_popup');
             },
-          )
+          ),
+          ListTile(
+            title: Text(
+              '登录背景测试-首页',
+              textAlign: TextAlign.center,
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_custom_login_home');
+            },
+          ),
+          ListTile(
+            title: Text(
+              '登录背景测试-注册',
+              textAlign: TextAlign.center,
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_custom_login_register');
+            },
+          ),
+          ListTile(
+            title: Text(
+              '登录背景测试-找回密码',
+              textAlign: TextAlign.center,
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/test_custom_login_find_password');
+            },
+          ),
         ],
       ),
     );
