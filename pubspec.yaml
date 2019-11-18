@@ -58,7 +58,7 @@ flutter:
   fonts:
     - family: AlibabaPuHuiTiBold
       fonts:
-        - asset: lib/fonts/Alibaba-PuHuiTi-Bold.ttf
+        - asset: lib/fonts/Alibaba-PuHuiTi.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

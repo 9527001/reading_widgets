@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RdImages{
+class RdImages {
   static const String PACKAGE = "reading_widgets";
 
   static const String RADIO_SELECT = "assets/icon_radio_select.png";
@@ -14,4 +14,7 @@ class RdImages{
   static const String LOGIN = "assets/icon_login.png";
   static const String LOGIN_HOME = "assets/icon_login_home.png";
   static const String NAV_RETURN = "assets/icon_nav_return.png";
+
+  static const String LOGIN_PHONE = "assets/icon_login_phone.png";
+  static const String LOGIN_PASSWORD = "assets/icon_login_password.png";
 }

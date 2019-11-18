@@ -14,7 +14,7 @@ class RdButton {
     double radius = 100,
     BorderRadiusGeometry borderRadius,
     TextStyle style = const TextStyle(color: RdColors.COLOR_32A7FF, fontSize: 20),
-    String fontFamily = RdFonts.AlibabaPuHuiTiBold,
+    String fontFamily = RdFonts.AlibabaPuHuiTi,
     bool isInk = true,
   }) {
     return border(
@@ -42,7 +42,7 @@ class RdButton {
     TextStyle style = const TextStyle(color: RdColors.COLOR_FFF, fontSize: 20, shadows: [
       Shadow(color: RdColors.COLOR_0092FF, offset: Offset(0, 2), blurRadius: 0),
     ]),
-    String fontFamily = RdFonts.AlibabaPuHuiTiBold,
+    String fontFamily = RdFonts.AlibabaPuHuiTi,
     double elevation = 4,
     bool isShadow = true,
     Offset offset = const Offset(0, 4),

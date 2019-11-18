@@ -54,6 +54,8 @@ flutter:
     - packages/reading_widgets/assets/icon_login_home.png
     - packages/reading_widgets/assets/icon_nav_return.png
     - packages/reading_widgets/assets/icon_login_home.png
+    - packages/reading_widgets/assets/icon_login_phone.png
+    - packages/reading_widgets/assets/icon_login_password.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -70,7 +72,7 @@ flutter:
   fonts:
     - family: AlibabaPuHuiTiBold
       fonts:
-        - asset: packages/reading_widgets/fonts/Alibaba-PuHuiTi-Bold.ttf
+        - asset: packages/reading_widgets/fonts/Alibaba-PuHuiTi.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

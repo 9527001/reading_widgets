@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
 class RdFonts{
-  static const String AlibabaPuHuiTiBold = "AlibabaPuHuiTiBold";
+  static const String AlibabaPuHuiTi = "AlibabaPuHuiTi";
 }
 
