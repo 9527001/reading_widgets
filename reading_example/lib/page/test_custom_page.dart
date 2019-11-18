@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 import 'package:jvtd_uikit/jvtd_uikit.dart';
@@ -31,11 +33,15 @@ class _TestCustomPageState extends State<TestCustomPage> {
           physics: NeverScrollableScrollPhysics(),
           child: Column(
             children: <Widget>[
-              RdButton.blueGeneral(onPressed: () {
-                RdToast.show(context, "123", RdImages.LOGIN_PASSWORD, package: RdImages.PACKAGE);
-              }, title: "登录", margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
+              RdButton.blueGeneral(
+                  onPressed: () {
+                    RdToast.show(context, "123", RdImages.LOGIN_PASSWORD, package: RdImages.PACKAGE);
+                  },
+                  title: "登录",
+                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
               RdButton.blueBorder(onPressed: () {}, title: "注册", margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
-              RdTextField.login(hint: "请输入",
+              RdTextField.login(
+                  hint: "请输入",
                   label: _value,
                   type: RdTextFieldType.phone,
                   onChanged: (value) {
@@ -43,7 +49,7 @@ class _TestCustomPageState extends State<TestCustomPage> {
                       _value = value;
                     });
                   },
-                  suffix: FlatButton(onPressed: () {}, child: Text("123"))),
+                  suffix: RdCountdownButton(title: "获取验证码", timeOutTitle: "重新获取", countdownTitle: " S", onPressed: _getCode())),
               RdCheckGroup(
                   datas: ["123", "12312312", "123123121"],
                   onSelected: (values) {
@@ -57,4 +63,9 @@ class _TestCustomPageState extends State<TestCustomPage> {
   }
 
   bool select = false;
+
+  Future<bool> _getCode() async {
+    await new Future.delayed(new Duration(milliseconds: 3000));
+    return false;
+  }
 }

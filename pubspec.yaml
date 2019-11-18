@@ -29,6 +29,12 @@ dependencies:
       url: 'https://github.com/JvtdFlutter/list.git'
       ref: 0.0.1
 
+  # list 列表基类
+  jvtd_utils:
+    git:
+      url: 'https://github.com/JvtdFlutter/utils.git'
+      ref: 0.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

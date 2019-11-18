@@ -70,6 +70,7 @@ class RdColors {
   static const Color COLOR_CCE9FF = Color(0xffCCE9FF);
 
   static const Color COLOR_FFA707 = Color(0xffFFA707);
+  static const Color COLOR_FFA707_10 = Color(0x19FFA707);
   static const Color COLOR_FCE6B4 = Color(0xffFCE6B4);
 
   static const Color COLOR_FF6224 = Color(0xffFF6224);

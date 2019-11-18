@@ -85,37 +85,6 @@ class RdToastView {
                 ],
               ),
             ),
-//              child: Container(
-//                margin: EdgeInsets.symmetric(horizontal: 35),
-//                decoration: BoxDecoration(
-//                  color: bgColor,
-//                  borderRadius: BorderRadius.all(Radius.circular(30)),
-//                ),
-//                child: Container(
-//                  padding: EdgeInsets.symmetric(vertical: 30, horizontal: 50),
-//                  decoration: BoxDecoration(
-//                    color: elevationColor,
-//                    borderRadius: BorderRadius.all(Radius.circular(30)),
-//                  ),
-//                  margin: EdgeInsets.only(bottom: 5),
-//                  child: Column(
-//                    mainAxisSize: MainAxisSize.min,
-//                    children: <Widget>[
-//                      JvtdImage.local(
-//                        name: img,
-//                        package: RdImages.PACKAGE,
-//                      ),
-//                      SizedBox(
-//                        height: 10,
-//                      ),
-//                      Text(
-//                        msg,
-//                        style: textStyle,
-//                      ),
-//                    ],
-//                  ),
-//                ),
-//              ),
           ),
         ),
       ),

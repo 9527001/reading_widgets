@@ -1,8 +1,132 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:jvtd_uikit/jvtd_uikit.dart';
+import 'package:jvtd_utils/jvtd_utils.dart';
 import 'package:reading_widgets/reading_widgets.dart';
-import 'package:reading_widgets/src/config/reading_color.dart';
-import 'package:reading_widgets/src/custom/reading_card.dart';
+
+class RdCountdownButton extends StatefulWidget {
+  final String title;
+  final String timeOutTitle;
+  final String countdownTitle;
+  final Future<bool> onPressed;
+  final int second;
+
+  const RdCountdownButton({
+    Key key,
+    @required this.title,
+    @required this.timeOutTitle,
+    @required this.countdownTitle,
+    @required this.onPressed,
+    this.second = 60,
+  }) : super(key: key);
+
+  @override
+  _RdCountdownButtonState createState() => _RdCountdownButtonState();
+}
+
+class _RdCountdownButtonState extends State<RdCountdownButton> {
+  TimerUtils _timerUtils;
+  int _time;
+  String _title;
+
+  @override
+  void initState() {
+    super.initState();
+    _title = widget.title;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _cancelTimer();
+  }
+
+  //初始化计时器
+  void _initTimer() {
+    _time = widget.second;
+
+    int sTime = 1000;
+    int tTime = sTime * (_time + 1);
+    if (_timerUtils == null) {
+      _timerUtils = new TimerUtils(mInterval: sTime, mTotalTime: tTime);
+    } else {
+      _timerUtils.setInterval(sTime);
+      _timerUtils.setTotalTime(tTime);
+    }
+    _timerUtils.setOnTimerCallback((int value) {
+      _timeUpdate();
+    });
+    _timerUtils.startCountDown();
+  }
+
+  //取消计时器
+  void _cancelTimer() {
+    _time = widget.second;
+    if (_timerUtils != null) _timerUtils.cancel();
+  }
+
+  //时间改变
+  void _timeUpdate() {
+    setState(() {
+      _time--;
+      setState(() {
+        _title = _time.toString() + widget.countdownTitle;
+      });
+      if (_time < 0) {
+        _resetTimer();
+      }
+    });
+  }
+
+  void _resetTimer() {
+    _cancelTimer();
+    _timerUtils = null;
+    setState(() {
+      _title = widget.timeOutTitle;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 93,
+      alignment: Alignment.center,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Ink(
+          child: InkWell(
+            enableFeedback: false,
+            onTap: () {
+              if (_timerUtils == null) {
+                _initTimer();
+                widget.onPressed.then((success) {
+                  if (!success) {
+                    FocusScope.of(context).requestFocus(FocusNode());
+                    _resetTimer();
+                  }
+                });
+              }
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: _timerUtils != null ? RdColors.COLOR_TRANSPARENT : RdColors.COLOR_FFA707_10,
+                  border: Border.all(color: _timerUtils != null ? RdColors.COLOR_B6B6B6 : RdColors.COLOR_FFA707, width: .5)),
+              alignment: Alignment.center,
+              constraints: BoxConstraints.expand(width: 100, height: 32),
+              child: Text(
+                _title,
+                style: TextStyle(color: _timerUtils != null ? RdColors.COLOR_B6B6B6 : RdColors.COLOR_FFA707, fontSize: 12),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 /// 睿丁英语-按钮样式
 class RdButton {
