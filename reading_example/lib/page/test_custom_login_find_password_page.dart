@@ -16,12 +16,9 @@ class _CustomLoginTopBackgroundPageState
 //        onPressed: () {
 //          Navigator.pop(context);
 //        });
-    return LoginTopBackground.general(
-        isLogo: false,
-        isNav: true,
-        isNote: false,
-        onPressed: () {
-          Navigator.pop(context);
-        });
+    return RdLoginTopBackground.general(
+      isLogo: false,
+      isNote: false,
+    );
   }
 }

@@ -11,6 +11,6 @@ class _CustomLoginTopBackgroundPageState
     extends State<CustomLoginRegisterPage> {
   @override
   Widget build(BuildContext context) {
-    return LoginTopBackground.general(isLogo: true);
+    return RdLoginTopBackground.general(isLogo: true);
   }
 }
