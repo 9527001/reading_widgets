@@ -15,46 +15,50 @@ class RdLoginTopBackground {
     return Container(
       color: Colors.white,
       child: Stack(
+        overflow: Overflow.visible,
         children: <Widget>[
           Image.asset(
             RdImages.LOGIN_REGISTER_BG,
             package: RdImages.PACKAGE,
           ),
-          Positioned(
-            top: 50,
-            left: 72,
-            right: 72,
-            child: Visibility(
-              visible: isLogo,
-              child: Image.asset(
-                RdImages.READING_ICON,
-                package: RdImages.PACKAGE,
-                height: 77,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 150,
-            left: 72,
-            right: 72,
-            child: Column(
-              children: <Widget>[
-                Image.asset(
-                  RdImages.LOGIN,
-                  package: RdImages.PACKAGE,
-                  width: 232,
-                ),
-                Visibility(
-                  visible: isNote,
-                  child: Image.asset(
-                    RdImages.LOGIN_HOME,
-                    package: RdImages.PACKAGE,
-                    height: 57,
-                  ),
-                ),
-              ],
-            ),
-          ),
+         Stack(
+           alignment: Alignment.topCenter,
+           children: <Widget>[
+             Container(
+               margin: EdgeInsets.only(top: 50,),
+               child: Visibility(
+                 visible: isLogo,
+                 child: Image.asset(
+                   RdImages.READING_ICON,
+                   package: RdImages.PACKAGE,
+                   height: 77,
+                 ),
+               ),
+             ),
+             Container(
+               alignment: Alignment.topCenter,
+               margin: EdgeInsets.only(top: 150),
+               child: Column(
+                 children: <Widget>[
+                   Image.asset(
+                     RdImages.LOGIN,
+                     package: RdImages.PACKAGE,
+                     width: 232,
+                   ),
+                   Visibility(
+                     visible: isNote,
+                     child: Image.asset(
+                       RdImages.LOGIN_HOME,
+                       package: RdImages.PACKAGE,
+                       height: 57,
+                     ),
+                   ),
+                 ],
+               ),
+             ),
+           ],
+         )
+
         ],
       ),
     );
