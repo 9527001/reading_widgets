@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// 睿丁英语 通用颜色
-class RdColors{
+class RdColors {
   static const Color COLOR_THEME_ORANGE = MaterialColor(
     _themePrimaryValue,
     <int, Color>{
@@ -17,8 +17,8 @@ class RdColors{
       900: Color(_themePrimaryValue),
     },
   );
-  static const int _themePrimaryValue = 0xffFFA80A; //主题色-橘色
-  static const LinearGradient GRADIENT_THEME_ORANGE_BACKGROUND = const LinearGradient(colors: [COLOR_THEME_ORANGE, COLOR_THEME_BLUE], begin: Alignment.centerLeft, end: Alignment.centerRight);
+  static const int _themePrimaryValue = 0xffFFA707; //主题色-橘色
+  static const LinearGradient GRADIENT_THEME_ORANGE_BACKGROUND = const LinearGradient(colors: [COLOR_FCE6B4, COLOR_THEME_ORANGE], begin: Alignment.centerLeft, end: Alignment.centerRight);
 
   static const Color COLOR_THEME_BLUE = MaterialColor(
     _themePrimaryBlueValue,
@@ -35,9 +35,8 @@ class RdColors{
       900: Color(_themePrimaryBlueValue),
     },
   );
-  static const int _themePrimaryBlueValue = 0xff33A3FF; //主题色-蓝色
-  static const LinearGradient GRADIENT_THEME_BLUE_BACKGROUND = const LinearGradient(colors: [COLOR_THEME_BLUE, COLOR_THEME_ORANGE], begin: Alignment.centerLeft, end: Alignment.centerRight);
-
+  static const int _themePrimaryBlueValue = 0xff32A7FF; //主题色-蓝色
+  static const LinearGradient GRADIENT_THEME_BLUE_BACKGROUND = const LinearGradient(colors: [COLOR_53B5FF, COLOR_THEME_BLUE], begin: Alignment.centerLeft, end: Alignment.centerRight);
 
   static const Color COLOR_CCC = Color(0xffcccccc);
   static const Color COLOR_FFF = Color(0xffffffff);
@@ -58,19 +57,20 @@ class RdColors{
   static const Color COLOR_B6B6B6 = Color(0xffb6b6b6);
 
   static const Color COLOR_E4F4FE = Color(0xffE4F4FE);
+  static const Color COLOR_DDDDDD = Color(0xffDDDDDD);
+  static const Color COLOR_898A95 = Color(0xff898A95);
+  static const Color COLOR_636679 = Color(0xff636679);
+
+  static const Color COLOR_0092FF = Color(0xff0092FF);
+  static const Color COLOR_53B5FF = Color(0xff53B5FF);
+  static const Color COLOR_32A7FF = Color(0xff32A7FF);
   static const Color COLOR_199CFF = Color(0xff199CFF);
   static const Color COLOR_4DB2FF = Color(0xff4DB2FF);
   static const Color COLOR_B3DEFF = Color(0xffB3DEFF);
+  static const Color COLOR_CCE9FF = Color(0xffCCE9FF);
+
   static const Color COLOR_FFA707 = Color(0xffFFA707);
   static const Color COLOR_FCE6B4 = Color(0xffFCE6B4);
-  static const Color COLOR_636679 = Color(0xff636679);
-  static const Color COLOR_CCE9FF = Color(0xffCCE9FF);
+
   static const Color COLOR_FF6224 = Color(0xffFF6224);
-  static const Color COLOR_32A7FF = Color(0xff32A7FF);
-  static const Color COLOR_DDDDDD = Color(0xffDDDDDD);
-  static const Color COLOR_898A95 = Color(0xff898A95);
-
-
-
-
 }

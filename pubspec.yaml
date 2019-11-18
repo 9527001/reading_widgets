@@ -56,9 +56,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: PaoPao
+    - family: AlibabaPuHuiTiBold
       fonts:
-        - asset: lib/fonts/Tensentype-PaoPaoF.ttf
+        - asset: lib/fonts/Alibaba-PuHuiTi-Bold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
