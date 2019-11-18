@@ -23,7 +23,7 @@ class _TestCustomPageState extends State<TestCustomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: RdAppBar.whiteBack(context,title: "测试"),
+      appBar: RdAppBar.whiteBack(context, title: "测试"),
       body: Container(
 //        color: Colors.amber,
         constraints: BoxConstraints.expand(),
@@ -31,13 +31,19 @@ class _TestCustomPageState extends State<TestCustomPage> {
           physics: NeverScrollableScrollPhysics(),
           child: Column(
             children: <Widget>[
-              RdButton.blueGeneral(onPressed: () {}, title: "登录", margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
+              RdButton.blueGeneral(onPressed: () {
+                RdToast.show(context, "123", RdImages.LOGIN_PASSWORD, package: RdImages.PACKAGE);
+              }, title: "登录", margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
               RdButton.blueBorder(onPressed: () {}, title: "注册", margin: EdgeInsets.symmetric(horizontal: 40, vertical: 8)),
-              RdTextField.login(hint: "请输入", label: _value,type: RdTextFieldType.phone,onChanged: (value){
-                setState(() {
-                  _value = value;
-                });
-              },suffix: FlatButton(onPressed: (){}, child: Text("123"))),
+              RdTextField.login(hint: "请输入",
+                  label: _value,
+                  type: RdTextFieldType.phone,
+                  onChanged: (value) {
+                    setState(() {
+                      _value = value;
+                    });
+                  },
+                  suffix: FlatButton(onPressed: () {}, child: Text("123"))),
               RdCheckGroup(
                   datas: ["123", "12312312", "123123121"],
                   onSelected: (values) {

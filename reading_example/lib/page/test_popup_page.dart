@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jvtd_dialog/jvtd_dialog.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 
 class TestPopupPage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _TestPopupPageState extends State<TestPopupPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(onPressed: (){
-              showDialog(
+              showJvtdDialog(
                   context: context,
                   builder: (BuildContext context) {
                     return _pop();
@@ -37,43 +38,20 @@ class _TestPopupPageState extends State<TestPopupPage> {
             }, child: Container(
               alignment:Alignment.center,child: Text('层级嵌套弹窗'),color: Colors.amber,
               constraints: BoxConstraints.expand(width: 100,height: 100),)),
-            SizedBox(height: 20,),
-            FlatButton(onPressed: (){
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return _pointPo();
-                  });
-            }, child: Container(
-              alignment:Alignment.center,child: Text('提示布局弹窗'),color: Colors.amber,
-              constraints: BoxConstraints.expand(width: 100,height: 100),)),
           ],
         ),
       )
     );
   }
 
-  Widget _pointPo(){
-    return RdPopUp.pointPopup(pointImage: RdImages.RADIO_SELECT,pointTitle: '账号不存在！',bgTwoColors: RdColors.COLOR_B3DEFF,bgOneColors: RdColors.COLOR_199CFF,pointImageWidth: 60,pointImageHeight: 60);
-  }
   Widget _pop(){
-    return Container(
-        child:  RdPopUp.popup(
-            isShow: true,
-            type: 1,
-            title: "选择分类",
-            buttonText: "确定",
-            container: Container(
-              child: Text(
-                '测试布局',
-                style: TextStyle(color: RdColors.COLOR_666, fontSize: 16),
-              ),
-            ),
-            onPressed: (){
-              print('确定');
-              Navigator.of(context).pop();
-            }
-        )
-    );
+    return RdAlertDialog(title: "选择分类", container: Container(
+      child: Text(
+        '测试布局',
+        style: TextStyle(color: RdColors.COLOR_666, fontSize: 16),
+      ),
+    ), buttonText: "确定", onPressed: (){
+
+    });
   }
 }
