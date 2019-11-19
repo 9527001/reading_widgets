@@ -17,23 +17,47 @@ dependencies:
       url: 'https://github.com/JvtdFlutter/uikit.git'
       ref: 0.1.0+1
 
-  # dialog 弹窗类
-  jvtd_dialog:
+  # router 路由导航
+  jvtd_router:
     git:
-      url: 'https://github.com/JvtdFlutter/dialog.git'
+      url: 'https://github.com/JvtdFlutter/router.git'
       ref: 0.0.2
 
   # list 列表基类
   jvtd_list:
     git:
       url: 'https://github.com/JvtdFlutter/list.git'
-      ref: 0.0.1
+      ref: 0.0.2
 
-  # list 列表基类
+  # utils 工具类
   jvtd_utils:
     git:
       url: 'https://github.com/JvtdFlutter/utils.git'
+      ref: 0.0.4
+
+  # string 语言国际化
+  jvtd_string:
+    git:
+      url: 'https://github.com/JvtdFlutter/string.git'
+      ref: 0.0.1
+
+  # dialog 弹窗类
+  jvtd_dialog:
+    git:
+      url: 'https://github.com/JvtdFlutter/dialog.git'
+      ref: 0.0.3+1
+
+  # http 接口基础类
+  jvtd_http:
+    git:
+      url: 'https://github.com/JvtdFlutter/http.git'
       ref: 0.0.3
+
+  # sqflite 数据库
+  jvtd_sqflite:
+    git:
+      url: 'https://github.com/JvtdFlutter/sqflite.git'
+      ref: 0.0.1
 
 dev_dependencies:
   flutter_test:
