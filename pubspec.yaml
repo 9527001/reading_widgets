@@ -15,7 +15,7 @@ dependencies:
   jvtd_uikit:
     git:
       url: 'https://github.com/JvtdFlutter/uikit.git'
-      ref: 0.1.1
+      ref: 0.1.1+1
 
   # router 路由导航
   jvtd_router:

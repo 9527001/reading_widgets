@@ -5,6 +5,29 @@ import 'package:reading_widgets/src/config/reading_color.dart';
 
 import '../../reading_widgets.dart';
 
+//class RdBaseAlertDialog extends JvtdBaseDialog{
+//  @override
+//  bool getCancelOutside() {
+//    return false;
+//  }
+//
+//  @override
+//  bool getKeyBackEnabled() {
+//    return false;
+//  }
+//
+//  @override
+//  double getWidthFactor() {
+//    return 0.8;
+//  }
+//
+//
+//  @override
+//  Widget buildBody(BuildContext context) {
+//    return null;
+//  }
+//}
+
 ///层级嵌套弹窗样式
 ///
 ///

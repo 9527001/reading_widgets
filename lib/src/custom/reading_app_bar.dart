@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jvtd_uikit/jvtd_uikit.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 
+enum RdAppBarBackType {
+  blue,
+  orange,
+}
+
 class RdAppBar {
   /// appbar
   static AppBar whiteBack(
@@ -23,6 +28,7 @@ class RdAppBar {
     double toolbarOpacity = 1.0,
     double bottomOpacity = 1.0,
     Function onPressed,
+        RdAppBarBackType backType = RdAppBarBackType.blue,
   }) {
     return AppBar(
       automaticallyImplyLeading: automaticallyImplyLeading,
@@ -38,7 +44,7 @@ class RdAppBar {
             },
         child: Container(
           padding: EdgeInsets.only(left: 16, top: 13, bottom: 13),
-          child: JvtdImage.local(name: RdImages.NAV_RETURN, width: 30, height: 30, package: RdImages.PACKAGE, fit: BoxFit.contain),
+          child: JvtdImage.local(name:backType == RdAppBarBackType.blue ? RdImages.NAV_RETURN :RdImages.NAV_RETURN_ORANGE, width: 30, height: 30, package: RdImages.PACKAGE, fit: BoxFit.contain),
         ),
       ),
       title: Text(title),
