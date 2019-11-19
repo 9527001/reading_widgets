@@ -20,6 +20,7 @@ import '../../reading_widgets.dart';
 ///[buttonText]按钮标题
 ///[isShow]是否显示眼睛
 ///[type]显示不同眼睛 0代表全部 1代表只看正确 2代表只看错误
+
 class RdAlertDialog extends JvtdBaseDialog {
   final EdgeInsets edgeInsets;
   final Color bgOneColors;
@@ -48,6 +49,7 @@ class RdAlertDialog extends JvtdBaseDialog {
     this.isShow = true,
     this.type = 0,
   });
+
   @override
   bool getCancelOutside() {
     return false;

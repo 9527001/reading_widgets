@@ -56,6 +56,9 @@ flutter:
     - packages/reading_widgets/assets/icon_login_home.png
     - packages/reading_widgets/assets/icon_login_phone.png
     - packages/reading_widgets/assets/icon_login_password.png
+    - packages/reading_widgets/assets/icon_login_success.png
+    - packages/reading_widgets/assets/icon_login_error.png
+    - packages/reading_widgets/assets/icon_sigh_symbol.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
