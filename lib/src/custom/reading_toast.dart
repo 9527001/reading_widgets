@@ -4,6 +4,16 @@ import 'package:jvtd_uikit/jvtd_uikit.dart';
 
 import '../../reading_widgets.dart';
 
+/// 睿丁英语提示类
+///
+/// [context] 上下文
+/// [msg] 显示信息
+/// [img] 显示图片
+/// [package] 图片所在包
+/// [duration] 时长
+/// [bgColor] 背景颜色
+/// [elevationColor] 阴影颜色
+/// [textStyle] 文字样式
 class RdToast {
   static final int RD_LENGTH_SHORT = 1;
   static final int RD_LENGTH_LONG = 2;
@@ -13,7 +23,7 @@ class RdToast {
     String msg,
     String img, {
     String package,
-    int duration = 4,
+    int duration = 2,
     Color bgColor = RdColors.COLOR_FFF,
     Color elevationColor = RdColors.COLOR_CCE9FF,
     TextStyle textStyle = const TextStyle(color: RdColors.COLOR_636679, fontSize: 14, fontFamily: RdFonts.AlibabaPuHuiTi),

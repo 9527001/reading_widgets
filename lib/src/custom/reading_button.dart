@@ -5,6 +5,12 @@ import 'package:jvtd_uikit/jvtd_uikit.dart';
 import 'package:jvtd_utils/jvtd_utils.dart';
 import 'package:reading_widgets/reading_widgets.dart';
 
+/// 倒计时按钮
+/// [title] 标准文本
+/// [timeOutTitle] 超时重新获取文本
+/// [countdownTitle] 倒计时文本  时间在前+话术
+/// [onPressed] 点击事件回调  异步返回一个成功失败
+/// [second] 倒计时时间  秒
 class RdCountdownButton extends StatefulWidget {
   final String title;
   final String timeOutTitle;
@@ -118,7 +124,7 @@ class _RdCountdownButtonState extends State<RdCountdownButton> {
               constraints: BoxConstraints.expand(width: 100, height: 32),
               child: Text(
                 _title,
-                style: TextStyle(color: _timerUtils != null ? RdColors.COLOR_B6B6B6 : RdColors.COLOR_FFA707, fontSize: 12),
+                style: TextStyle(color: _timerUtils != null ? RdColors.COLOR_B6B6B6 : RdColors.COLOR_FFA707, fontSize: 12, fontFamily: RdFonts.AlibabaPuHuiTi),
               ),
             ),
           ),
@@ -230,7 +236,7 @@ class RdButton {
               padding: EdgeInsets.zero,
               child: Text(
                 title,
-                style: fontFamily != null && fontFamily.isNotEmpty ? style.copyWith(fontFamily: fontFamily) : style,
+                style: RdFonts.family(style, fontFamily),
               ),
               shape: RoundedRectangleBorder(borderRadius: borderRadius ?? BorderRadius.all(Radius.circular(radius)), side: BorderSide(color: borderColor)),
               color: color,
@@ -347,7 +353,7 @@ class RdButton {
                     padding: EdgeInsets.zero,
                     child: Text(
                       title,
-                      style: fontFamily != null && fontFamily.isNotEmpty ? style.copyWith(fontFamily: fontFamily) : style,
+                      style: RdFonts.family(style, fontFamily),
                     ),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius ?? BorderRadius.all(Radius.circular(radius))),
                   ),
