@@ -15,7 +15,7 @@ class RdImages {
   static const String LOGIN_HOME = "assets/icon_login_home.png";
   static const String NAV_RETURN = "assets/icon_nav_return.png";
   static const String LOGIN_ERROR = "assets/icon_login_error.png";
-  static const String LOGIN_SUCCESS = "assets/icon_lgoin_success.png";
+  static const String LOGIN_SUCCESS = "assets/icon_login_success.png";
 
   static const String LOGIN_PHONE = "assets/icon_login_phone.png";
   static const String LOGIN_PASSWORD = "assets/icon_login_password.png";
